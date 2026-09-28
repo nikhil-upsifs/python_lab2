@@ -5,6 +5,7 @@ def decorator(func):
        print("Function executed")
    return wrapper
 @decorator
-def greet():
-   print("Hello, World!")
-greet()
+def square():
+    n=input("Enter a number: ")
+    print("Square of the number is: ", int(n)**2)
+square()
