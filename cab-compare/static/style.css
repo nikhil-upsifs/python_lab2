@@ -1,0 +1,150 @@
+:root {
+  --bg: #0f1117;
+  --card: #181b24;
+  --border: #262b38;
+  --text: #e8eaf1;
+  --muted: #9aa2b5;
+  --accent: #4f8cff;
+  --green: #2ecc71;
+  --uber: #e6e6e6;
+  --ola: #34d186;
+  --rapido: #ffd54d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+.container { max-width: 880px; margin: 0 auto; }
+
+header { text-align: center; margin-bottom: 28px; }
+header h1 { font-size: 2.2rem; letter-spacing: -1px; }
+header h1 span { color: var(--accent); }
+.tagline { color: var(--muted); margin-top: 6px; }
+
+#trip-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+.field input:focus { outline: none; border-color: var(--accent); }
+
+#submit-btn {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #4f8cff, #6a5cff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+#submit-btn:disabled { opacity: 0.6; cursor: wait; }
+
+.status {
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+}
+.status.error { color: #ff6b6b; }
+
+.summary {
+  margin-top: 20px;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.12), rgba(106, 92, 255, 0.08));
+}
+.summary h2 { font-size: 1.1rem; margin-bottom: 4px; }
+.summary p { color: var(--muted); font-size: 0.95rem; }
+.summary strong.cheapest { color: var(--green); font-size: 1.25rem; }
+
+.results {
+  margin-top: 20px;
+  display: grid;
+  gap: 18px;
+}
+
+.ride-type { margin-bottom: 4px; }
+.ride-type h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+.ride-type h3 small { text-transform: none; letter-spacing: 0; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.card.cheapest {
+  border-color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(46, 204, 113, 0.15);
+}
+.card .badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--green);
+  color: #08130c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.card .platform { font-size: 0.8rem; color: var(--muted); }
+.card .ride-name { font-weight: 600; margin: 2px 0 10px; }
+.card .price { font-size: 1.5rem; font-weight: 700; }
+.card .price::before { content: "₹"; font-size: 1rem; margin-right: 2px; color: var(--muted); }
+.card .meta { margin-top: 6px; font-size: 0.8rem; color: var(--muted); }
+.card .surge { color: #ffab6b; }
+
+footer {
+  margin-top: 36px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hidden { display: none; }

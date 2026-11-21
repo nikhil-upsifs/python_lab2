@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CabCompare — Uber vs Ola vs Rapido</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Cab<span>Compare</span></h1>
+      <p class="tagline">Find the cheapest ride across Uber, Ola & Rapido</p>
+    </header>
+
+    <form id="trip-form" autocomplete="off">
+      <div class="field">
+        <label for="pickup">Pickup location</label>
+        <input id="pickup" type="text" placeholder="e.g. Connaught Place, Delhi" required />
+      </div>
+      <div class="field">
+        <label for="drop">Destination</label>
+        <input id="drop" type="text" placeholder="e.g. Cyber City, Gurugram" required />
+      </div>
+      <button id="submit-btn" type="submit">Compare Prices</button>
+    </form>
+
+    <div id="status" class="status hidden"></div>
+
+    <section id="summary" class="summary hidden"></section>
+    <section id="results" class="results hidden"></section>
+
+    <footer>
+      <p>
+        Prices are estimates based on public fare structures and time-based surge —
+        always confirm in the actual app before booking.
+      </p>
+    </footer>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
